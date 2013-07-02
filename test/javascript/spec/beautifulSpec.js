@@ -49,10 +49,6 @@ describe("Sinon Fake Server With Jasmine", function () {
         server.restore();
     });
 
-    beforeEach(function () {
-
-    });
-
     it("should be true on first callback", function () {
         expect(callbacks[0].calledOnce).toBeTruthy();
     });
