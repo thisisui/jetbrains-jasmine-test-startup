@@ -1,0 +1,1 @@
+var fixturesPath = '/test/fixtures/';

@@ -1,6 +1,38 @@
 /*
  * Just write your Jasmine tests here
  */
+jasmine.getFixtures().fixturesPath = fixturesPath;
+
+describe("We want to test some DOM", function() {
+
+    describe('using jasmine jquery matchers', function () {
+        var spyEvent;
+
+        beforeEach(function(){
+            loadFixtures('someDOM.html');
+            spyEvent = spyOnEvent('#idsomething', 'click');
+            $('#idsomething').click();
+        });
+
+        it("should check if something exists", function(){
+            expect($('#idsomething')).toExist();
+        });
+
+        it("should check if something not exists", function(){
+            expect($('#idsomethingNotExisting')).not.toExist();
+        });
+
+        it("should check if click was triggered on specific element", function(){
+            expect('click').toHaveBeenTriggeredOn('#idsomething');
+        });
+
+        it("should check if click was triggered", function(){
+            expect(spyEvent).toHaveBeenTriggered();
+        });
+
+    });
+
+});
 
 describe("Beautiful object", function () {
 
@@ -25,6 +57,7 @@ describe("Sinon Fake Server With Jasmine", function () {
     var server, callbacks;
 
     beforeEach(function () {
+        console.log('done');
         server = sinon.fakeServer.create();
         server.respondWith("GET", "/something",
             [200, { "Content-Type": "application/json" },
