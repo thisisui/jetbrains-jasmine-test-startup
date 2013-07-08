@@ -6,7 +6,7 @@ var Beautiful = (function () {
 
     return function () {
         this.sayHello = function (name) {
-            return "Hello " + name;
+            return 'Hello ' + name;
         };
 
         this.init =  function () {
