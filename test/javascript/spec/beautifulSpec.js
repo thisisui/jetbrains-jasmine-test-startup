@@ -35,6 +35,11 @@ describe("We want to test some DOM", function() {
 });
 
 describe("Beautiful object", function () {
+    var beautiful;
+
+    beforeEach(function () {
+        beautiful = new Beautiful();
+    });
 
     describe("init function", function () {
         it("should return object", function () {

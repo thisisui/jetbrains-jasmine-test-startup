@@ -1,15 +1,17 @@
 /*
  * Just write your beautiful JavaScript here
  */
+var Beautiful = (function () {
+    'use strict';
 
-var beautiful = {
+    return function () {
+        this.sayHello = function (name) {
+            return "Hello " + name;
+        };
 
-    sayHello: function (name) {
-        return "Hello " + name;
-    },
+        this.init =  function () {
+            return this;
+        };
+    };
 
-    init: function () {
-        return this;
-    }
-
-};
+}());
